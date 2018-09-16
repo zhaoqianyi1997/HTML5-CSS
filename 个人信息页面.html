@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		h1{
+			text-align: center;
+		}
+		#information{
+			color:red;
+			font-weight: bold;
+		}
+		#e-mail{
+			color:red;
+			font-weight: bold;
+			}
+		#total{
+			width: 380px;
+		}
+	</style>
+	<body>
+		<div id = "total">
+		<h1>请填写个人信息</h1>
+		<fieldset>
+			<legend id="information">基本信息</legend>
+			 姓名<input type="text" placeholder="请输入姓名" autofocus="autofocus" required="required"/>
+			<font color="red">*</font>
+			</br>
+			年龄<input type="number"  min="1" max="99" step="1"/>		
+		</fieldset><br />
+		<fieldset>
+			<legend id="e-mail">你想在哪里收到邮件？</legend>
+			邮箱<input type="text" required="required" placeholder="请输入邮箱" id="email" list="ema"/>
+			<datalist id="ema">
+				<option class="opt">@qq.com</option>
+				<option class="opt">@163.com</option>
+				<option class="opt">@gmail.com</option>
+				<option class="opt">@yahoo.com</option>
+				<option class="opt">@126.com</option>
+			</datalist>
+			<span><font color="red">*</font></span>
+		</fieldset><br />
+		<fieldset>
+			<legend>收入情况</legend>
+			月收入<input type="text" name="salary" autocomplete="on" list="salary" results />
+				<datalist id="salary">
+					<option>10k+</option>
+					<option>20k+</option>
+					<option>30k+</option>
+					<option>40k+</option>
+				</datalist></br>
+			银行卡<input type="text"/>
+			有效期<input type="date"/>
+		</fieldset><br />
+		<fieldset>
+			<legend>
+				选取提交文件
+			</legend>
+			文件<input type="file"/>
+		</fieldset><br />
+		<input type="submit"/>
+		</div>
+	</body>
+	<script>
+		window.onload=function(){
+			var arr=['@qq.com','@163.com','@gmail.com','@yahoo.com','@126.com'];
+			var email=document.getElementById("email");
+			var opt=document.getElementsByClassName("opt");
+			email.oninput=function(){
+				for(var i=0;i<arr.length;i++){
+					opt[i].innerText=email.value+arr[i];
+				}
+			}
+			email.onchange=function(){
+				var reg=/\w+((-\w+)|(\.\w+))*\@[A-Za-z0-9]+((\.|-)[A-Za-z0-9]+)*\.[A-Za-z0-9]+/;
+				if(!reg.test(email.value))
+					alert("邮箱格式错误!");
+			}
+		}
+	</script>
+</html>
