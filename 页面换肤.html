@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<style>
+		#nav{
+			color: red;
+			font-size: 30px;
+			font-weight: bold;
+		}
+		#option{
+			border:1px solid black;
+			height: 35px;
+		}
+		#page{
+			width: 500px;
+		}
+		#fir{
+			background-color: orangered;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+		#sec{
+			background-color: lightblue;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+		#thi{
+			background-color: hotpink;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+		#fou{
+			background-color: limegreen;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+		#fif{
+			background-color: mediumpurple;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+		#six{
+			background-color: darkgray;
+			height: 20px;
+			width: 20px;
+			float: left;
+			border: 3px solid white;
+		}
+	</style>
+	<body>
+		<div id="page">
+		<fieldset>
+			<legend id = 'nav'>页面换肤</legend>
+			<div id ="option">
+				<div id="fir" onclick="changeColor('orangered')"></div></li>
+				<div id="sec" onclick="changeColor('lightblue')"></div></li>
+				<div id="thi" onclick="changeColor('hotpink')"></div></li>
+				<div id="fou" onclick="changeColor('limegreen')"></div></li>
+				<div id="fif" onclick="changeColor('mediumpurple')"></div></li>
+				<div id="six" onclick="changeColor('darkgray')"></div></li>
+			</div>
+			<p id="article">LocalStorage将数据保存在客户端本地的硬件设备中，
+				即使浏览器被关闭了，该数据依然存在，下次打开浏览器访问网站时，
+				仍然可以继续使用
+			</p>
+		</fieldset>
+		</div>
+	</body>
+	<script>
+		var getLocalColor = window.localStorage.getItem("localColor");
+ 		if(getLocalColor){	
+ 			getId('article').background=getLocalColor;
+         }
+ 		
+		function getId(id){
+			return document.getElementById(id);
+		}
+		
+		function changeColor(color){
+			getId('article').style.background=color;
+		}
+			
+
+	</script>
+</html>
