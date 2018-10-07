@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>上传头像</title>
+	</head>
+	<style>
+		#frame{
+			height: 300px;
+			width: 200px;
+			border: 3px solid black;
+		}
+	</style>
+	<script type="text/javascript">
+		function drag(){
+			var frame=document.getElementById("frame");
+			setTimeout(function(){
+			frame.addEventListener("dragenter",function(e){
+				e.preventDefault();
+			},false);
+			frame.addEventListener("dragover",function(e){
+				e.preventDefault();
+			},false);
+			frame.addEventListener("drop", function(e) 
+		    {
+		        e.preventDefault();
+		        var picture=e.dataTransfer.files;
+		        var reader=new FileReader();
+		        reader.readAsDataURL(picture[0]);
+		        reader.onload = function(ev){
+			       frame.innerHTML = '<img src="'+this.result+'" alt=""/>'
+			    }
+		    }, false),500});
+		}
+	</script>
+	<body onload="drag()">
+		上传头像
+		<div id="frame"></div>
+	</body>
+</html>
