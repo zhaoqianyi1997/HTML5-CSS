@@ -11,7 +11,9 @@
 			border: 3px solid black;
 		}
 	</style>
-	<script type="text/javascript">
+	<body onload="drag()">上传头像<div id="frame"></div>
+	</body>
+	<script>
 		function drag(){
 			var frame=document.getElementById("frame");
 			setTimeout(function(){
@@ -33,8 +35,4 @@
 		    }, false),500});
 		}
 	</script>
-	<body onload="drag()">
-		上传头像
-		<div id="frame"></div>
-	</body>
 </html>
