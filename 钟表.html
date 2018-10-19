@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{utf-8}">
+		<title></title>
+	</head>
+	<style>
+		.hand{
+			position: absolute;
+			top:0;
+			left:0;
+		}
+	</style>
+	<body>
+		<canvas id="clock" width="500" height="500"></canvas>
+		<canvas id="second" class="hand" width="500" height="500"></canvas>
+		<canvas id="minute" class="hand" width="500" height="500"></canvas>
+		<canvas id="hour" class="hand" width="500" height="500"></canvas>
+		
+		
+	</body>
+	<script>
+		window.onload = function () {
+	        var canvas = document.getElementById("clock");
+	        var context = canvas.getContext("2d");
+	        context.translate(260, 210);
+	        context.fillStyle = '#EE0000';
+	        context.save();
+	        for (var i = 0; i < 60; i++) {
+	            context.rotate(Math.PI / 30);//旋转
+	            context.fillRect(180, 0, 10, 2);
+	        }
+	        context.translate(0,0);
+	        context.fillStyle = '#006400';
+	        for (var i = 0; i < 12; i++) {
+		        context.rotate(Math.PI / 6);//旋转
+		        context.fillRect(180, 0, 15, 5);
+	        }
+			context.lineWidth=5;
+			context.strokeStyle = "#008B45";
+			context.beginPath();
+			context.arc(0,0,205,0,2*Math.PI);//圆心
+			context.closePath();
+			context.stroke();
+//			context.restore();
+			context.rotate(-132/180*Math.PI);
+			for(var temp=1;temp<13;temp++) {
+				context.beginPath();
+				context.rotate(Math.PI/6);
+//				context.lineWidth=5;
+				context.fillStyle="#EE0000";
+				context.fillText(temp,120,120);
+			}
+			
+//			console.log(s);
+//			console.log(myDate);
+//			console.log(h,m,s);
+		
+////			秒针
+				var myDate = new Date();
+				var s = myDate.getSeconds();
+				var canvas1 = document.getElementById("second");
+	        	var context1 = canvas1.getContext("2d");
+	        	context1.translate(260, 210);
+				context1.rotate((s-15)*6/180*Math.PI);
+				context1.fillRect(0,0,4,150);
+				context1.clearRect(-100,-100,500,500);
+				setInterval(function(){
+					context1.clearRect(-100,-100,500,500);
+					context1.beginPath();
+					context1.rotate(Math.PI/30);
+					context1.fillStyle="#228B22";
+					context1.fillRect(0,0,4,150);
+				},1000);
+//分针
+				var myDate = new Date();
+				var m = myDate.getMinutes();
+				var canvas2 = document.getElementById("minute");
+	        	var context2 = canvas2.getContext("2d");
+//	        	console.log(m);
+	        	context2.translate(260, 210);
+	        	context2.rotate(270/180*Math.PI);
+				context2.rotate((m-15)*6/180*Math.PI);
+				context2.fillRect(0,0,5,140);
+				context2.fillStyle="#3A5FCD";
+				
+				context2.clearRect(-100,100,500,500);
+			setInterval(function(){
+				context2.clearRect(-100,-100,500,500);
+				context2.beginPath();
+				context2.rotate(Math.PI/30);
+				context2.fillStyle="darkgreen";
+				context2.fillRect(0,0,5,120);
+//				context2.lineCap="round";
+			},60000);
+
+//			//时针
+
+				var myDate = new Date();
+				var tem = myDate.getHours();
+				var h = tem>12?(tem-12):tem;
+//				console.log(h);
+				var canvas3 = document.getElementById("hour");
+	        	var context3 = canvas3.getContext("2d");
+//	        	context3.rotate(-Math.PI);
+	        	context3.translate(260, 210);
+	        	context3.rotate(270/180*Math.PI);
+				context3.rotate((h-3)*30/180*Math.PI);
+				context3.fillRect(0,0,7,80);
+			setInterval(function(){
+				context3.clearRect(-100,-100,500,500);
+				context3.beginPath();
+				context3.rotate(Math.PI/30);
+				context3.fillStyle="#EE0000";
+				context3.fillRect(0,0,7,80);
+				
+			},3600000);
+			}		
+
+	</script>
+</html>

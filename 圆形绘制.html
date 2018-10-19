@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="{utf-8}">
+		<title></title>
+	</head>
+	
+	<body>
+		<canvas id="circle" width="800px" height="1000"></canvas>
+	</body>
+	<script>
+		var c = document.getElementById("circle");
+		var context = c.getContext("2d");
+		for(i=0;i<50;i++){
+			var x = Math.random()*500+1;
+			var y = Math.random()*500+1;
+			var r = Math.random()*50+1;
+			context.beginPath();
+			context.arc(x,y,r,0,2*Math.PI);
+			var r1 = Math.random()*255;
+			var g = Math.random()*256;
+			var b = Math.random()*256;
+			context.fillStyle="rgba("+r1+","+g+","+b+",0.5)";//引号中传变量记得用字符串拼接
+			context.closePath();
+			context.fill();
+//			context.stroke();
+		}
+		
+		
+	</script>
+</html>
