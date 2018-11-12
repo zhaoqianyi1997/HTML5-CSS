@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<link rel="stylesheet" href="css/bootstrap.min.css">
+		<title></title>
+	</head>
+	<style>
+		#generic{
+			width: 1140px;
+			margin: -25px auto;
+		}
+		.btn-group{
+			position: absolute;
+			left: 180px;
+			top: 220px;	
+			z-index:999
+		}
+		#para{
+			float: left;
+		}
+	</style>
+	<body>
+		<div class="container">
+			<!--导航栏-->
+			<nav class="navbar navbar-inverse" > 
+				<div class="container-fluid">
+				  <div class="navbar-header">
+				    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-1">
+				      <span class="sr-only">导航开关</span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				      <span class="icon-bar"></span>
+				    </button>
+				    <a class="navbar-brand" href="#">
+				    	<span class="glyphicon glyphicon-bell"></span>
+				    	Brand
+				    </a>
+				  </div>
+				  <div class="collapse navbar-collapse" id="bs-1">
+				    <ul class="nav navbar-nav">
+				      <li><a href="#">Link</a></li>
+				      <li><a href="#">Link1</a></li>
+				      <li><a href="#">Link2</a></li>
+				      <li><a href="#">Link3</a></li>
+				      <li><a href="#">Link4</a></li>    
+				    </ul>   
+				  </div>
+				</div>
+			</nav> 
+		
+		<!--轮播图-->
+		<div class="carousel">
+		<div id="generic" class="carousel slide" data-ride="carousel">
+	  	<!-- 轮播（Carousel）指示标 -->
+	    <ol class="carousel-indicators">
+	      <li data-target="#generic" data-slide-to="0" class="active"></li>
+	      <li data-target="#generic" data-slide-to="1"></li>
+	      <li data-target="#generic" data-slide-to="2"></li>
+	    </ol>
+	    <div class="btn-group">
+	    	<button type="button" class="btn btn-default" >
+		    	GET IT NOW 
+		    </button>  
+		</div>
+	     <!-- 轮播（Carousel）项目 -->
+	    <div class="carousel-inner" >
+	      <div class="item active">
+	        <img alt="First slide" src="images/banner1.jpg" >
+			    <div class="carousel-caption">
+			    	<h3>轮播图1</h3>
+	          		<p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+	        	</div>
+	      </div>
+	      <div class="item">
+	        <img alt="Second slide" src="images/banner2.jpg" >
+	        <div class="carousel-caption">
+	          <h3>轮播图2</h3>
+	          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+	        </div>
+	      </div>
+	      <div class="item">
+	        <img alt="Third slide" src="images/banner3.jpg"  >
+			  <div class="carousel-caption">
+		          <h3>轮播图3</h3>
+		          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+	          </div>
+	      </div>
+	    </div>
+	    <!-- 轮播（Carousel）导航 -->
+	    <a class="left carousel-control" href="#generic" data-slide="prev" >
+	      <span class="glyphicon glyphicon-chevron-left"></span>
+	    </a>
+	    <a class="right carousel-control" href="#generic" data-slide="next">
+	      <span class="glyphicon glyphicon-chevron-right"></span>
+	    </a>
+	    </div>
+	    <!--栅格-->
+	    <div class="row">
+	    	<p></p>
+			  <div class=" col-md-4">
+			  	<h3>Content area1<small>The First</small></h3>
+			  	Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton
+			  	合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。
+			  	Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。
+			  </div>
+			  <div class=" col-md-4">
+			  	<h3>Content area2<small>The Second</small></h3>
+			  	Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton
+			  	合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。
+			  	Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。
+			  </div>
+			  <div class=" col-md-4">
+			  	<h3>Content area3<small>The Third</small></h3>
+			  	Bootstrap是美国Twitter公司的设计师Mark Otto和Jacob Thornton
+			  	合作基于HTML、CSS、JavaScript 开发的简洁、直观、强悍的前端开发框架，使得 Web 开发更加快捷。
+			  	Bootstrap提供了优雅的HTML和CSS规范，它即是由动态CSS语言Less写成。
+			  </div>
+		</div>
+		<!--表格-->
+		<div class="table">
+		   <h3>Report Table<small>Form Detail</small></h3>
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th>#</th>
+						<th>first</th>
+						<th>second</th>
+						<th>third</th>
+						<th>forth</th>
+						<th>fifth</th>
+					</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td>1</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>11</td>
+					<td>
+						<button type="submit" value="submit"
+						style="background-color: #4CAF50;border: #4CAF50;">提交</button>
+					</td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>22</td>
+					<td>
+						<button type="submit" value="submit"
+						style="background-color: #4CAF50;border: #4CAF50;">提交</button>
+					</td>
+				</tr>
+				<tr>
+					<td>3</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>Bootstrap</td>
+					<td>33</td>
+					<td>
+						<button type="submit" value="submit"
+						style="background-color: #4CAF50;border: #4CAF50;">提交</button>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+		<!--缩略图-->
+		<div class="row">
+			  <div class="col-sm-6 col-md-6">
+			    <div class="thumbnail" id="tuolue">
+			        <img src="images/pic.jpg" class="img-rounded" alt="...">
+			        <div class="caption"></div>
+			    </div>
+			  </div>
+			  	<div class="media col-md-6">
+			 		<div class="media-heading">
+					    <h4>多媒体标题</h4>
+						    <p>Cras sit amet nibh libero, in gravida nulla. 
+						    Nulla vel metus scelerisque ante sollicitudin commodo. 
+						    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
+						    Fusce condimentum nunc ac nisi vulputate fringilla. 
+						    Donec lacinia congue felis in faucibus.</p>
+				    </div>
+				    <div class="media-body">
+					    Donec lacinia congue felis in faucibus.<br/>
+					    Donec lacinia congue felis in faucibus.<br/>
+					    Donec lacinia congue felis in faucibus.<br/>
+					    Donec lacinia congue felis in faucibus.<br/>
+					</div>
+					   <a class="media-left" href="#">
+					    <img class="media-right" src="images/4.jpg" height="80" width="180">
+					   </a>
+				</div>
+			<!--缩略图-->
+	<div class="row">
+			<div class="col-md-7">
+				<h3>Images Show<small>Images</small></h3>
+				<div class="row">
+			    	<div class="col-sm-6 col-md-4">
+				    	<a href="#" class="thumbnail">
+			        	<img src="images/1.jpg">
+			      		</a>
+			    	</div>
+			    	<div class="col-sm-6 col-md-4">
+			      		<a href="#" class="thumbnail">
+			        	<img src="images/2.jpg">
+			      		</a>
+			    	</div>
+			    	<div class="col-sm-6 col-md-4">
+			      		<a href="#" class="thumbnail">
+			        	<img src="images/3.jpg">
+			      		</a>
+			    	</div>
+		    	</div>
+		    		Cras sit amet nibh libero, in gravida nulla. 
+				    Nulla vel metus scelerisque ante sollicitudin commodo. 
+				    Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. 
+		    </div>
+		    <!--登录-->
+		    <div class="col-md-5">
+			    <form role="form">
+			    	<h3>User Login<small>Form</small></h3>
+			  	<div class="form-group">
+			    	<label for="InputEmail1">邮箱地址</label>
+			    	<input type="text" class="form-control " id="InputEmail1"  placeholder="123@163.com">
+			  	</div>
+			  	<div class="form-group">
+			    	<label for="InputPassword1">密码</label>
+			    	<input type="password" class="form-control" id="InputPassword1" placeholder="Password">
+			  	</div>
+			  	<div class="checkbox">
+			    	<label>
+			      		<input type="checkbox"> red &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			      		<input type="checkbox"> blue
+			    	</label>
+			  	</div>
+			  	<button class="btn btn-info">Sign in</button>
+				</form>
+			</div>
+	</div>
+	    <!---->
+	 </div>
+		<script src="js/jquery.js"></script>    
+    	<script src="js/bootstrap.min.js"></script>   
+	</body>
+</html>
